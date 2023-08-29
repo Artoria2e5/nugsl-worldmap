@@ -3,7 +3,7 @@
 '''
 
 import sys, re, os
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 
 class pinConfig(ConfigParser):
     
@@ -18,7 +18,7 @@ class pinConfig(ConfigParser):
         
         for file in pin_file:
             if not os.path.exists( file ):
-                print 'Error: unable to find pin file %s' %file
+                print('Error: unable to find pin file %s' %file)
                 sys.exit()
         
         self.read( pin_file )
@@ -33,7 +33,7 @@ class pinConfig(ConfigParser):
             m = {}
             for option in ['latitude','longitude']:
                 if not self.has_option(section,option):
-                    print 'Missing %s for %s, aborting.' % (option,section)
+                    print('Missing %s for %s, aborting.' % (option,section))
                     sys.exit()
             m['title'] = section
             m['url'] = self.get(section,'url')
@@ -87,7 +87,7 @@ class pinConfig(ConfigParser):
             latitude = None
         
         if latitude == None or latitude > 90 or latitude < -90:
-            print "Error: invalid latitude value '%s'." % s
+            print("Error: invalid latitude value '%s'." % s)
             sys.exit()
         else:
             return latitude
@@ -113,7 +113,7 @@ class pinConfig(ConfigParser):
             meridian = None
         
         if meridian == None or meridian > 180 or meridian < -180:
-            print "Error: invalid longitude value '%s'." % s
+            print("Error: invalid longitude value '%s'." % s)
             sys.exit()
         else:
             return meridian
@@ -123,7 +123,7 @@ class pinConfig(ConfigParser):
             return []
         r1 = re.match('[a-zA-Z]+,.*',self.pin_string)
         if not r1:
-            print "Error: A name is required as the first element in the -p option string."
+            print("Error: A name is required as the first element in the -p option string.")
             sys.exit()
         pins = self.pin_string.split(',')
         pin_name = pins[0]
@@ -132,8 +132,8 @@ class pinConfig(ConfigParser):
         newpins = []
         for pin in pins:
             if len(pin) != 2:
-                print "Error: Syntax error in -p option string, missing coordinate in item."
-                print pin
+                print("Error: Syntax error in -p option string, missing coordinate in item.")
+                print(pin)
                 sys.exit()
             m = {}
             m['title'] = '%s%d' % (pin_name,count)

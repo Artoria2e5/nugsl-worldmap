@@ -15,7 +15,7 @@ class styleSheet:
         else:
             for style_file in self.style_files:
                 if not os.path.exists( style_file ):
-                    print 'ERROR: Unable to find style file %s' %style_file
+                    print('ERROR: Unable to find style file %s' %style_file)
                     sys.exit()
                 self.styles.append( open( style_file ).read() )
 

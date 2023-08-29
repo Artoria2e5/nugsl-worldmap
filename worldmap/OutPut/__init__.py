@@ -15,7 +15,7 @@ class outPut:
         elif mode == 'rotated':
             data = self.robinson()
         elif mode == 'flat':
-            print "Saving Robinson projection data file for this output image."
+            print("Saving Robinson projection data file for this output image.")
             self.pickle_values()
             data = self.flatten()
         else:

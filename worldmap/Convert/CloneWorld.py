@@ -59,7 +59,7 @@ class cloneWorld:
         try:
             head = r2.group(1)
         except:
-            print txt
+            print(txt)
         body = r2.group(2)
         tail = r2.group(3)
         left_body = re.sub(self.rex1, 'id="\\1_left"', body)

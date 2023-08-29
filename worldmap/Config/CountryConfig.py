@@ -3,7 +3,7 @@
 '''
 
 import os,sys
-from ConfigParser import ConfigParser
+from configparser import ConfigParser
 
 class countryConfig(ConfigParser):
     
@@ -14,7 +14,7 @@ class countryConfig(ConfigParser):
         
         for file in country_file:
             if not os.path.exists( file ):
-                print 'Error: unable to find requested data file for %s' %file
+                print('Error: unable to find requested data file for %s' %file)
                 sys.exit()
         
         self.read( country_file )

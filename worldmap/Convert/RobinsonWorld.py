@@ -25,7 +25,7 @@ class robinsonWorld:
     
     def robinson(self):
         if self.flatness( self.filedata ) and not self.idata:
-            print "Image appears to be flat, and there is no data file.  Aborting conversion."
+            print("Image appears to be flat, and there is no data file.  Aborting conversion.")
             sys.exit()
         self.data = self.clone( data=self.filedata )
         self.offset_ocean( self.longitude_offset( self.meridian ) )

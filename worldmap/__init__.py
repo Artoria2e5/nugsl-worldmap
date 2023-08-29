@@ -3,21 +3,21 @@
 '''
 
 import sys, os
-from WorldBase import worldBase
-from Convert import flattenWorld
-from Convert import cloneWorld
-from Convert import robinsonWorld
-from Convert import countryImage
-from Config import pinConfig
-from Config import countryConfig
-from ViewPort import viewPort
-from ImageMap import imageMap
-from PinPoint import pinPoint
+from .WorldBase import worldBase
+from .Convert import flattenWorld
+from .Convert import cloneWorld
+from .Convert import robinsonWorld
+from .Convert import countryImage
+from .Config import pinConfig
+from .Config import countryConfig
+from .ViewPort import viewPort
+from .ImageMap import imageMap
+from .PinPoint import pinPoint
 from nugsl.tagtool import tagFix
 
-from HtmlMerge import html_merge
-from OutPut import outPut
-from StyleSheet import styleSheet
+from .HtmlMerge import html_merge
+from .OutPut import outPut
+from .StyleSheet import styleSheet
 
 class worldMap(worldBase,flattenWorld,cloneWorld,robinsonWorld, countryImage, viewPort, imageMap, pinPoint, outPut, styleSheet):
     def __init__(self, filename, ofile,
@@ -61,9 +61,9 @@ class worldMap(worldBase,flattenWorld,cloneWorld,robinsonWorld, countryImage, vi
         self.pin_width = pin_width
 
         if os.path.basename( sys.argv[0] ) == 'nugsl-worldmap.py':
-            print "ERROR: The nugsl-worldmap.py script is obsolete."
-            print "  Please delete it from your system and use nugsl-worldmap"
-            print "  (with no .py extension) instead."
+            print("ERROR: The nugsl-worldmap.py script is obsolete.")
+            print("  Please delete it from your system and use nugsl-worldmap")
+            print("  (with no .py extension) instead.")
             sys.exit()
         worldBase.__init__(self)
         self.load()

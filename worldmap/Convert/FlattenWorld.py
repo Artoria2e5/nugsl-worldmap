@@ -29,7 +29,7 @@ class flattenWorld(worldBase):
                                matchfunc=self.fix_pin,
                                regex=self.r_pin)
         else:
-            print "  Skipping flatten step as unnecessary."
+            print("  Skipping flatten step as unnecessary.")
 
         if not internal:
             data = self.viewport_set( data )

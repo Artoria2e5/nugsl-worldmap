@@ -3,7 +3,7 @@
     Module
 '''
 
-from RobinsonWorld import robinsonWorld
-from CloneWorld import cloneWorld
-from FlattenWorld import flattenWorld
-from CountryImage import countryImage
+from .RobinsonWorld import robinsonWorld
+from .CloneWorld import cloneWorld
+from .FlattenWorld import flattenWorld
+from .CountryImage import countryImage

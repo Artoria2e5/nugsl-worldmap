@@ -103,16 +103,12 @@ Microsoft.  Separate [instructions][instructions] are also available.
 To run the script, you will need to have the following items
 installed on your system:
 
-> [Python][python] (the script was developed using Python 2.5)
+*[Python][python] (the script was developed using Python 3.7)
+*[`tagtool`][tagtool] (see below for installation instructions)
+*[`nugsl-worldmap`][worldmap] (see below for installation instructions)
 
 [python]: http://www.python.org/download/
-
-> [`tagtool`][tagtool] (see below for installation instructions)
-
 [tagtool]: http://gsl-nagoya-u.net/appendix/software/tagtool//
-
-> [`nugsl-worldmap`][worldmap] (see below for installation instructions)
-
 [worldmap]: http://gsl-nagoya-u.net/appendix/software/worldmap/
 
 To install `tagtool` and `nugsl-worldmap`, expand the relevant 

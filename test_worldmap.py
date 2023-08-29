@@ -4,7 +4,7 @@
 
 import unittest
 import os
-from worldmap import worldBase
+from .worldmap import worldBase
 
 class TestTranslation(unittest.TestCase):
 

@@ -3,7 +3,7 @@
 '''
 
 import re,sys,os.path
-from cPickle import Pickler, Unpickler
+from pickle import Pickler, Unpickler
 from nugsl.tagtool import tagFix
 import math
 
@@ -54,12 +54,12 @@ class worldBase:
         
         if self.idata:
             if os.path.exists(self.idata):
-                print "Robinson projection data exists for this input file."
+                print("Robinson projection data exists for this input file.")
                 if not self.flatness( self.filedata ):
                     self.idata = None
-                    print "  Input image appears to be curved, calculating curve from image."
+                    print("  Input image appears to be curved, calculating curve from image.")
                 else:
-                    print "  Input image appears to be flat, using external data file."
+                    print("  Input image appears to be flat, using external data file.")
                     self.unpickle_values()
             else:
                 self.idata = None
@@ -223,7 +223,7 @@ class worldBase:
         if r:
             endpoints = r.group(1)
         else:
-            print 'Oops, unable to find the ocean.  Giving up.'
+            print('Oops, unable to find the ocean.  Giving up.')
             sys.exit()
         
         self.endpoints = self.get_coordinates(endpoints)
@@ -324,22 +324,22 @@ class worldBase:
             outer extreme value pairs, for the left- and
             the right-side arc coordinate sets.            
         '''
-        exec 'arc = self.%smost[:]' %hemisphere
+        exec('arc = self.%smost[:]' %hemisphere)
         array = {}
         for t in arc:
-            if not array.has_key( t[1] ):
+            if t[1] not in array:
                 array[ t[1] ] = t[0]
             elif hemisphere == 'right' and t[0] > array[ t[1] ]:
                 array[ t[1] ] = t[0]
             elif t[0] < array[ t[1] ]:
                 array[ t[1] ] = t[0]
         arc = []
-        keys = array.keys()
+        keys = list(array.keys())
         keys.sort()
         keys.reverse()
         for key in keys:
             arc.append( (array[key], key) )
-        exec 'self.%smost = arc' %hemisphere
+        exec('self.%smost = arc' %hemisphere)
 
     def build_conv_left(self):
         '''
@@ -397,9 +397,9 @@ class worldBase:
                     try:
                         y2 = self.conv_left[pos+1][0]
                     except:
-                        print 'Ran out of choices in WorldBase.py'
-                        print 'y: %f' %y
-                        print 'conv_left: %f' % self.conv_left[pos][0]
+                        print('Ran out of choices in WorldBase.py')
+                        print('y: %f' %y)
+                        print('conv_left: %f' % self.conv_left[pos][0])
                     c1 = self.conv_left[pos][1]
                     c2 = self.conv_left[pos+1][1]
 
@@ -417,22 +417,22 @@ class worldBase:
                     try:
                         y2 = self.conv_right[pos+1][0]
                     except:
-                        print 'Ran out of choices in WorldBase.py'
-                        print 'y: %f' %y
-                        print 'conv_right: %f' % self.conv_right[pos][0]
+                        print('Ran out of choices in WorldBase.py')
+                        print('y: %f' %y)
+                        print('conv_right: %f' % self.conv_right[pos][0])
                     c1 = self.conv_right[pos][1]
                     c2 = self.conv_right[pos+1][1]
                     m = (y1-y2)/(c1-c2)
                     factor = ((y-y2)/m) + c2
                     break
         if factor == None:
-            print 'Failure in WorldBase.py'
-            print '         x: %f' %x
-            print ' centerpos: %f' %self.centerpos
-            print ' table min: %f' %self.conv_left[-1][0]
-            print ' table max: %f' %self.conv_left[0][0]
-            print '         y: %f' %y
-            print 'table max expanded: %f ' %self.conv_left[0][0]
+            print('Failure in WorldBase.py')
+            print('         x: %f' %x)
+            print(' centerpos: %f' %self.centerpos)
+            print(' table min: %f' %self.conv_left[-1][0])
+            print(' table max: %f' %self.conv_left[0][0])
+            print('         y: %f' %y)
+            print('table max expanded: %f ' %self.conv_left[0][0])
             sys.exit()
         if flag == 'shrink':
             x = self.shrink_x( x, factor )
