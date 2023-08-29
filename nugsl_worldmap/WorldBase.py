@@ -4,7 +4,7 @@
 
 import re,sys,os.path
 from pickle import Pickler, Unpickler
-from nugsl.tagtool import tagFix
+from nugsl_tagtool import tagFix
 import math
 
 class worldBase:
