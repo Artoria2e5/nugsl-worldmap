@@ -5,7 +5,7 @@
 import sys, os
 from .WorldBase import worldBase
 from .Convert import flattenWorld
-from .Convert import cloneWorld
+from .Convert import CloneWorld
 from .Convert import robinsonWorld
 from .Convert import countryImage
 from .Config import pinConfig
@@ -13,7 +13,7 @@ from .Config import countryConfig
 from .ViewPort import viewPort
 from .ImageMap import imageMap
 from .PinPoint import pinPoint
-from nugsl.tagtool import tagFix
+from nugsl_tagtool import tagFix
 
 from .HtmlMerge import html_merge
 from .OutPut import outPut
@@ -21,7 +21,7 @@ from .StyleSheet import styleSheet
 
 
 class worldMap(
-    worldBase, flattenWorld, cloneWorld, robinsonWorld, countryImage, viewPort, imageMap, pinPoint, outPut, styleSheet
+    worldBase, flattenWorld, CloneWorld, robinsonWorld, countryImage, viewPort, imageMap, pinPoint, outPut, styleSheet
 ):
     def __init__(
         self,

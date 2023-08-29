@@ -1,6 +1,19 @@
 World map tool
 ==============
 
+Status: this project has been fed through 2to3. tagtool is now
+incluced and linter import errors are fixed. I have no idea if
+it runs.
+
+It's also written in a very reckless way that defies static analysis,
+namely having a class access things defined in another class in a
+different file without subclassing.
+
+I will stop right when it works for my use and not look at it ever after.
+Maybe even before.
+
+* * *
+
 This is a simple tool for "remixing" [a public domain world map
 available via Wikimedia][map] (a Robinson projection in vector graphic
 format that shows all U.N. member states).  After this map was chosen
@@ -68,7 +81,7 @@ Wikipedia contributors, for whose efforts we all must be
 grateful. As it has been released to the public domain, a copy 
 of the map has been incorporated into this software.
 
-# Usage
+## Usage
 
 The script itself is pretty straightfoward.  After installing the
 software, open a command line terminal.  Run the command
@@ -98,13 +111,12 @@ Microsoft.  Separate [instructions][instructions] are also available.
 [instructions]: http://support.microsoft.com/kb/935575
 
 
-# Installation
+## Installation
 
 To run the script, you will need to have the following items
 installed on your system:
 
 *[Python][python] (the script was developed using Python 3.7)
-*[`tagtool`][tagtool] (see below for installation instructions)
 *[`nugsl-worldmap`][worldmap] (see below for installation instructions)
 
 [python]: http://www.python.org/download/
@@ -117,7 +129,7 @@ Python's ``site-packages``).  Each archive contains a setup file
 `setup.py`.  OS-specific installation instructions follow.
 
 
-## GNU/Linux, BSDs, Unix, Mac OS X, etc.
+### GNU/Linux, BSDs, Unix, Mac OS X, etc.
 
 1. Open a shell.
 2. Go to the directory created by expanding the archive::
@@ -132,7 +144,7 @@ Python's ``site-packages``).  Each archive contains a setup file
    root permissions to complete this step.
 
 
-## Windows
+### Windows
 
 Just double-click `install.py`.  If this doesn't work, try the
 following:

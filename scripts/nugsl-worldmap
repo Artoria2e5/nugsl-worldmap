@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-from nugsl.worldmap import worldMap
+from nugsl_worldmap import worldMap
 from optparse import OptionParser
 import sys, os.path, re
-from nugsl.worldmap import pinConfig, countryConfig
-from nugsl.worldmap import imageMap
+from nugsl_worldmap import pinConfig, countryConfig
+from nugsl_worldmap import imageMap
 
-from nugsl.worldmap import html_merge
+from nugsl_worldmap import html_merge
 
 if __name__ == '__main__':
     

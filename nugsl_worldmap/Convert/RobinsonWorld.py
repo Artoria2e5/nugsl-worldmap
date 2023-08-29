@@ -3,7 +3,7 @@
 """
 
 import re, sys
-from nugsl.tagtool import tagFix
+from nugsl_tagtool import tagFix
 
 clip_template = """        
 <defs id="clip_defs">

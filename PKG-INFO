@@ -14,5 +14,4 @@ Description: This program can be used to refactor a Robinson projection world ma
         rewritten, giving full control over colours and other aspects of
         the map's appearance.
 Platform: any
-Requires: nugsl.tagtool
-Provides: nugsl.worldmap
+Provides: nugsl_worldmap

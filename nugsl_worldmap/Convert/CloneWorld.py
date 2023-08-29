@@ -8,7 +8,7 @@
 """
 
 import re, sys
-from nugsl.tagtool import tagFix
+from nugsl_tagtool import tagFix
 
 
 class cloneWorld:

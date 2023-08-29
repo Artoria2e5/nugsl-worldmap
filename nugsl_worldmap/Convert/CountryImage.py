@@ -3,7 +3,7 @@
 """
 
 import re
-from nugsl.tagtool import tagFix
+from nugsl_tagtool import tagFix
 
 
 class countryImage:

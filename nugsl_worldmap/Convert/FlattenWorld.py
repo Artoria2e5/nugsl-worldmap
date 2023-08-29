@@ -6,8 +6,8 @@
 import re, sys, os.path
 import math
 
-from nugsl.tagtool import tagFix
-from nugsl.worldmap import worldBase
+from nugsl_tagtool import tagFix
+from nugsl_worldmap import worldBase
 
 
 class flattenWorld(worldBase):
