@@ -1,7 +1,7 @@
 #!/usr/bin/python
-'''
+"""
     Module
-'''
+"""
 
 from .RobinsonWorld import robinsonWorld
 from .CloneWorld import cloneWorld
